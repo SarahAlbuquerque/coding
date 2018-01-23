@@ -16,15 +16,19 @@ def get_nextSequence(s):
 
 N = -1
 while(True):
-    N = int(input())
-    sequence = '3'
+    try:
+        N = int(input())
+        sequence = '3'
 
-    for j in range(N-1):
-        if N == 1:
-            print(sequence)
-        else: 
-            aux = []
-            aux = get_nextSequence(list(sequence))
-            sequence = aux[:]
-    print(sequence)
+        for j in range(N-1):
+            if N == 1:
+                print(sequence)
+            else: 
+                aux = []
+                aux = get_nextSequence(list(sequence))
+                sequence = aux[:]
+        print(sequence)
+    except EOFError:
+        break
+        
     
